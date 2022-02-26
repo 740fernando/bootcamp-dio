@@ -17,7 +17,7 @@ public class Dev {
 
 	public void progredir() {
 		Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
-		if(conteudo.isEmpty()) {
+		if(conteudo.isPresent()) {
 			this.conteudosConcluidos.add(conteudo.get());
 			this.conteudosInscritos.remove(conteudo.get());
 		}else {
@@ -25,8 +25,8 @@ public class Dev {
 		}
 	}
 
-	public void calcularTotalXp() {
-		this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXp).sum();
+	public double calcularTotalXp() {
+		return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXp).sum();
 	}
 
 	public String getNome() {
