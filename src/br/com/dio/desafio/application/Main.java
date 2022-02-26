@@ -2,6 +2,7 @@ package br.com.dio.desafio.application;
 
 import java.time.LocalDate;
 
+import br.com.dio.desafio.dominio.Conteudo;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Mentoria;
 
@@ -16,6 +17,8 @@ public class Main {
 		outroCurso.setTitulo("Bootcamp c#");
 		outroCurso.setDescricao("\r\n" + "Abstraindo um Bootcamp Usando Orientação a Objetos em c sharp");
 		outroCurso.setCargaHoraria(8);
+		
+		Conteudo conteudo = new Curso();
 
 		Mentoria mentoria = new Mentoria();
 		mentoria.setTitulo("mentoria bootcamp java");
